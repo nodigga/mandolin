@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A82AB750FD814DC8C3764817 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F93C38F00EF2A806D31F68 /* libPods.a */; };
 		A854F1B51AA6D0D7006CAFC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A854F1B41AA6D0D7006CAFC8 /* Foundation.framework */; };
 		A854F1B71AA6D0D7006CAFC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A854F1B61AA6D0D7006CAFC8 /* CoreGraphics.framework */; };
 		A854F1B91AA6D0D7006CAFC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A854F1B81AA6D0D7006CAFC8 /* UIKit.framework */; };
@@ -14,7 +15,7 @@
 		A854F1C11AA6D0D7006CAFC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A854F1C01AA6D0D7006CAFC8 /* main.m */; };
 		A854F1C51AA6D0D7006CAFC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A854F1C41AA6D0D7006CAFC8 /* AppDelegate.m */; };
 		A854F1C81AA6D0D7006CAFC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A854F1C61AA6D0D7006CAFC8 /* Main.storyboard */; };
-		A854F1CB1AA6D0D7006CAFC8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A854F1CA1AA6D0D7006CAFC8 /* ViewController.m */; };
+		A854F1CB1AA6D0D7006CAFC8 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A854F1CA1AA6D0D7006CAFC8 /* ViewController.mm */; };
 		A854F1CD1AA6D0D7006CAFC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A854F1CC1AA6D0D7006CAFC8 /* Images.xcassets */; };
 		A854F1D41AA6D0D7006CAFC8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A854F1D31AA6D0D7006CAFC8 /* XCTest.framework */; };
 		A854F1D51AA6D0D7006CAFC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A854F1B41AA6D0D7006CAFC8 /* Foundation.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77F93C38F00EF2A806D31F68 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C9FA6747E026922CFA6F49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A854F1B11AA6D0D7006CAFC8 /* mandolin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mandolin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A854F1B41AA6D0D7006CAFC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A854F1B61AA6D0D7006CAFC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,13 +49,15 @@
 		A854F1C41AA6D0D7006CAFC8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A854F1C71AA6D0D7006CAFC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A854F1C91AA6D0D7006CAFC8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A854F1CA1AA6D0D7006CAFC8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A854F1CA1AA6D0D7006CAFC8 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		A854F1CC1AA6D0D7006CAFC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A854F1D21AA6D0D7006CAFC8 /* mandolinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mandolinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A854F1D31AA6D0D7006CAFC8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A854F1DB1AA6D0D7006CAFC8 /* mandolinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mandolinTests-Info.plist"; sourceTree = "<group>"; };
 		A854F1DD1AA6D0D7006CAFC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A854F1DF1AA6D0D7006CAFC8 /* mandolinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mandolinTests.m; sourceTree = "<group>"; };
+		A854F1E91AA6D0E4006CAFC8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		D5832A2E430CF1D2C6DE96AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 				A854F1B71AA6D0D7006CAFC8 /* CoreGraphics.framework in Frameworks */,
 				A854F1B91AA6D0D7006CAFC8 /* UIKit.framework in Frameworks */,
 				A854F1B51AA6D0D7006CAFC8 /* Foundation.framework in Frameworks */,
+				A82AB750FD814DC8C3764817 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,10 +88,12 @@
 		A854F1A81AA6D0D7006CAFC8 = {
 			isa = PBXGroup;
 			children = (
+				A854F1E91AA6D0E4006CAFC8 /* Podfile */,
 				A854F1BA1AA6D0D7006CAFC8 /* mandolin */,
 				A854F1D91AA6D0D7006CAFC8 /* mandolinTests */,
 				A854F1B31AA6D0D7006CAFC8 /* Frameworks */,
 				A854F1B21AA6D0D7006CAFC8 /* Products */,
+				FD145EFB3DBA5BDEE218B8C4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +113,7 @@
 				A854F1B61AA6D0D7006CAFC8 /* CoreGraphics.framework */,
 				A854F1B81AA6D0D7006CAFC8 /* UIKit.framework */,
 				A854F1D31AA6D0D7006CAFC8 /* XCTest.framework */,
+				77F93C38F00EF2A806D31F68 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,7 +125,7 @@
 				A854F1C41AA6D0D7006CAFC8 /* AppDelegate.m */,
 				A854F1C61AA6D0D7006CAFC8 /* Main.storyboard */,
 				A854F1C91AA6D0D7006CAFC8 /* ViewController.h */,
-				A854F1CA1AA6D0D7006CAFC8 /* ViewController.m */,
+				A854F1CA1AA6D0D7006CAFC8 /* ViewController.mm */,
 				A854F1CC1AA6D0D7006CAFC8 /* Images.xcassets */,
 				A854F1BB1AA6D0D7006CAFC8 /* Supporting Files */,
 			);
@@ -152,6 +161,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FD145EFB3DBA5BDEE218B8C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9FA6747E026922CFA6F49 /* Pods.debug.xcconfig */,
+				D5832A2E430CF1D2C6DE96AD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A854F1E31AA6D0D7006CAFC8 /* Build configuration list for PBXNativeTarget "mandolin" */;
 			buildPhases = (
+				4783440A82F61C2EC4D2E0E6 /* Check Pods Manifest.lock */,
 				A854F1AD1AA6D0D7006CAFC8 /* Sources */,
 				A854F1AE1AA6D0D7006CAFC8 /* Frameworks */,
 				A854F1AF1AA6D0D7006CAFC8 /* Resources */,
+				6B427079B9671330FF36E5F8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,12 +264,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4783440A82F61C2EC4D2E0E6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B427079B9671330FF36E5F8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A854F1AD1AA6D0D7006CAFC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A854F1CB1AA6D0D7006CAFC8 /* ViewController.m in Sources */,
+				A854F1CB1AA6D0D7006CAFC8 /* ViewController.mm in Sources */,
 				A854F1C51AA6D0D7006CAFC8 /* AppDelegate.m in Sources */,
 				A854F1C11AA6D0D7006CAFC8 /* main.m in Sources */,
 			);
@@ -373,6 +426,7 @@
 		};
 		A854F1E41AA6D0D7006CAFC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C9FA6747E026922CFA6F49 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -386,6 +440,7 @@
 		};
 		A854F1E51AA6D0D7006CAFC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5832A2E430CF1D2C6DE96AD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -456,6 +511,7 @@
 				A854F1E51AA6D0D7006CAFC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A854F1E61AA6D0D7006CAFC8 /* Build configuration list for PBXNativeTarget "mandolinTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +520,7 @@
 				A854F1E81AA6D0D7006CAFC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
