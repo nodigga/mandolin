@@ -11,6 +11,7 @@
 #import "AEAudioController.h"
 #import "AEBlockChannel.h"
 #import "Mandolin.h"
+#import "Moog.h"
 
 
 @interface ViewController ()
@@ -21,6 +22,9 @@
 
     AEBlockChannel *myMandolinChannel;
     stk::Mandolin *myMandolin;
+    
+    AEBlockChannel *myMoogChannel;
+    stk::Moog *myMoog;
 
 }
 
@@ -53,6 +57,22 @@
     }];
     
     [[appDelegate audioController] addChannels:@[myMandolinChannel]];
+    
+    myMoog = new stk::Moog();
+    myMoog->setFrequency(400);
+    
+    myMoogChannel = [AEBlockChannel channelWithBlock:^(const AudioTimeStamp  *time,
+                                                           UInt32 frames,
+                                                           AudioBufferList *audio) {
+        for ( int i=0; i<frames; i++ ) {
+            
+            ((float*)audio->mBuffers[0].mData)[i] =
+            ((float*)audio->mBuffers[1].mData)[i] = myMoog->tick();
+            
+        }
+    }];
+    
+    [[appDelegate audioController] addChannels:@[myMoogChannel]];
 
     
 
@@ -72,6 +92,30 @@
 -(IBAction)changeFrequency:(UISlider *)sender {
     self->myMandolin->setFrequency(sender.value);
 }
+
+
+-(IBAction)setFrequency:(UISlider *)sender {
+    self->myMoog->setFrequency(sender.value);
+    
+    
+}
+
+int noteOn;
+
+- (IBAction)sliderValueChanged:(UISlider *)sender {
+    noteOn = sender.value;
+    
+}
+
+
+-(IBAction)noteOnMyMoog {
+    self->myMoog->noteOn(noteOn,0.8);
+}
+
+-(IBAction)noteOffMyMoog {
+    self->myMoog->noteOff(1);
+}
+
 
 
 
