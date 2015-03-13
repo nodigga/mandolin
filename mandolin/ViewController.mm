@@ -15,6 +15,7 @@
 
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *myButton1;
 
 @end
 
@@ -54,6 +55,10 @@
             ((float*)audio->mBuffers[1].mData)[i] = myMandolin->tick();
             
         }
+        
+        UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
+        [_myButton1 setImage:btnImage forState:UIControlStateNormal];
+        
     }];
     
     [[appDelegate audioController] addChannels:@[myMandolinChannel]];
@@ -88,6 +93,8 @@
 -(IBAction)pluckMyMandolin {
     self->myMandolin->pluck(1);
 }
+
+
 
 -(IBAction)changeFrequency:(UISlider *)sender {
     self->myMandolin->setFrequency(sender.value);
