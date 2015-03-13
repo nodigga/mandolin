@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *myButton1;
+
 @end

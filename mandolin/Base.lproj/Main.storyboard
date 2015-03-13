@@ -45,7 +45,7 @@
                                     <action selector="sliderValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="zNL-Ce-1uA"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvs-u7-hqw">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvs-u7-hqw">
                                 <rect key="frame" x="109" y="398" width="102" height="90"/>
                                 <state key="normal" backgroundImage="Pad_1">
                                     <color key="titleColor" red="1" green="0.16309669412837624" blue="0.90971243660550549" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,7 +59,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="myButton1" destination="xvs-u7-hqw" id="PKl-En-mOD"/>
+                        <outlet property="myButton1" destination="xvs-u7-hqw" id="WJp-SG-oZ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

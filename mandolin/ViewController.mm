@@ -15,7 +15,7 @@
 
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *myButton1;
+
 
 @end
 
@@ -56,8 +56,7 @@
             
         }
         
-        UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
-        [_myButton1 setImage:btnImage forState:UIControlStateNormal];
+    
         
     }];
     
@@ -80,6 +79,9 @@
     [[appDelegate audioController] addChannels:@[myMoogChannel]];
 
     
+    
+    
+    
 
 }
 
@@ -90,8 +92,15 @@
 }
 
 
+
+
+
 -(IBAction)pluckMyMandolin {
     self->myMandolin->pluck(1);
+    
+    UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
+
+    [self.myButton1 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
 }
 
 
