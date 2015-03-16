@@ -219,6 +219,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = nodigga;
 				TargetAttributes = {
+					A854F1B01AA6D0D7006CAFC8 = {
+						DevelopmentTeam = G5499486S2;
+					};
 					A854F1D11AA6D0D7006CAFC8 = {
 						TestTargetID = A854F1B01AA6D0D7006CAFC8;
 					};

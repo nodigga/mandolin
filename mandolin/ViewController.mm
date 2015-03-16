@@ -29,6 +29,8 @@
 
 }
 
+UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -79,9 +81,6 @@
     [[appDelegate audioController] addChannels:@[myMoogChannel]];
 
     
-    
-    
-    
 
 }
 
@@ -98,7 +97,7 @@
 -(IBAction)pluckMyMandolin {
     self->myMandolin->pluck(1);
     
-    UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
+   
 
     [self.myButton1 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
 }
@@ -116,7 +115,7 @@
     
 }
 
-int noteOn;
+int noteOn = 440;
 
 - (IBAction)sliderValueChanged:(UISlider *)sender {
     noteOn = sender.value;
@@ -126,6 +125,10 @@ int noteOn;
 
 -(IBAction)noteOnMyMoog {
     self->myMoog->noteOn(noteOn,0.8);
+    
+    [self.myButton2 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
+    
+    
 }
 
 -(IBAction)noteOffMyMoog {

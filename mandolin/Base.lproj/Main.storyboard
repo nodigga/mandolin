@@ -17,36 +17,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvf-UM-gix">
-                                <rect key="frame" x="95" y="55" width="131" height="30"/>
-                                <state key="normal" title="Pluck My Mandolin">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="400" minValue="200" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Q26-qb-lGo">
-                                <rect key="frame" x="101" y="117" width="118" height="31"/>
-                                <connections>
-                                    <action selector="changeFrequency:" destination="vXZ-lx-hvc" eventType="valueChanged" id="79p-ID-uh5"/>
-                                </connections>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibd-Vc-fBj">
-                                <rect key="frame" x="103" y="224" width="114" height="30"/>
-                                <state key="normal" title="Synth Sound">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doS-WY-pCm">
+                                <rect key="frame" x="80" y="20" width="65" height="64"/>
+                                <state key="normal" backgroundImage="Pad_1">
+                                    <color key="titleColor" red="1" green="0.16309669409999999" blue="0.90971243660000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="noteOffMyMoog" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DTX-5Q-auB"/>
-                                    <action selector="noteOnMyMoog" destination="vXZ-lx-hvc" eventType="touchDown" id="6vn-9d-cAm"/>
+                                    <action selector="noteOffMyMoog" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gE3-UJ-GBv"/>
+                                    <action selector="noteOnMyMoog" destination="vXZ-lx-hvc" eventType="touchDown" id="YeK-aE-WQs"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="200" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="srj-Rj-AI8">
-                                <rect key="frame" x="101" y="304" width="118" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBI-Bi-3Fa">
+                                <rect key="frame" x="153" y="20" width="65" height="64"/>
+                                <state key="normal" backgroundImage="Pad_1">
+                                    <color key="titleColor" red="1" green="0.16309669409999999" blue="0.90971243660000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="sliderValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="zNL-Ce-1uA"/>
+                                    <action selector="pluckMyMandolin" destination="vXZ-lx-hvc" eventType="touchDown" id="39Y-oM-nWz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCS-4M-qE5">
+                                <rect key="frame" x="226" y="20" width="65" height="64"/>
+                                <state key="normal" backgroundImage="Pad_1">
+                                    <color key="titleColor" red="1" green="0.16309669409999999" blue="0.90971243660000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pluckMyMandolin" destination="vXZ-lx-hvc" eventType="touchDown" id="VK3-Ut-bkN"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="440" minValue="200" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-Lj-aYh">
+                                <rect key="frame" x="78" y="228" width="118" height="31"/>
+                                <connections>
+                                    <action selector="changeFrequency:" destination="vXZ-lx-hvc" eventType="valueChanged" id="zyW-fT-gVR"/>
+                                    <action selector="setFrequency:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ddt-hw-2YY"/>
+                                    <action selector="sliderValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="5QA-yi-fam"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvs-u7-hqw">
-                                <rect key="frame" x="109" y="398" width="102" height="90"/>
+                                <rect key="frame" x="7" y="20" width="65" height="64"/>
                                 <state key="normal" backgroundImage="Pad_1">
                                     <color key="titleColor" red="1" green="0.16309669412837624" blue="0.90971243660550549" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,6 +71,9 @@
                     </view>
                     <connections>
                         <outlet property="myButton1" destination="xvs-u7-hqw" id="WJp-SG-oZ0"/>
+                        <outlet property="myButton2" destination="doS-WY-pCm" id="6wg-pc-FYv"/>
+                        <outlet property="myButton3" destination="CBI-Bi-3Fa" id="fdw-Kc-nCj"/>
+                        <outlet property="myButton4" destination="PCS-4M-qE5" id="378-ke-Xfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
