@@ -14,6 +14,7 @@
     CGPoint position;
     IBOutlet UIImageView *image;
     NSTimer *timer;
+    NSTimeInterval bpm;
 
 }
 -(IBAction)Start;

@@ -27,13 +27,16 @@
     AEBlockChannel *myMoogChannel;
     stk::Moog *myMoog;
 
+    
 }
+
+
 
 UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
 
 
 -(IBAction)Start {
-    timer = [NSTimer scheduledTimerWithTimeInterval:(0.1)
+    timer = [NSTimer scheduledTimerWithTimeInterval:(bpm)
                                              target: self
                                            selector:@selector(onTimer)
                                            userInfo: nil repeats: YES];
@@ -49,6 +52,8 @@ UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
 
 -(void)onTimer {
     NSLog(@ "works!");
+    self->myMandolin->pluck(1);
+    
 }
 
 
@@ -103,6 +108,7 @@ UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
     
     [[appDelegate audioController] addChannels:@[myMoogChannel]];
 
+    bpm = 0.5;
     
 
 }
@@ -159,10 +165,20 @@ int noteOn = 440;
 }
 
 -(IBAction)sliderBpmValueChanged:(UISlider *)sender {
-    float bpm = [sender value];
+   
+    bpm = [sender value];
+    [self Stop];
+    [self Start];
     
-    NSLog(@"bpm is %f ", bpm);
+    //NSLog(@"bpm is %f ", bpm);
 
+    
+    
+    //bpm = [NSNumber numberWithDouble:result];
+    
+    
+    
+    
 }
 
 @end
