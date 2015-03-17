@@ -135,7 +135,11 @@ int noteOn = 440;
     self->myMoog->noteOff(1);
 }
 
+-(IBAction)sliderBpmValueChanged:(UISlider *)sender {
+    float bpm = [sender value];
+    
+    NSLog(@"bpm is %f ", bpm);
 
-
+}
 
 @end

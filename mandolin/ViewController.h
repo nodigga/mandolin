@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *myButton1;
 @property (weak, nonatomic) IBOutlet UIButton *myButton2;
 @property (weak, nonatomic) IBOutlet UIButton *myButton3;

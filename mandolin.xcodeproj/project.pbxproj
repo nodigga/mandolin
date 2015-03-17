@@ -56,7 +56,7 @@
 		A854F1DB1AA6D0D7006CAFC8 /* mandolinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mandolinTests-Info.plist"; sourceTree = "<group>"; };
 		A854F1DD1AA6D0D7006CAFC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A854F1DF1AA6D0D7006CAFC8 /* mandolinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mandolinTests.m; sourceTree = "<group>"; };
-		A854F1E91AA6D0E4006CAFC8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A854F1E91AA6D0E4006CAFC8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D5832A2E430CF1D2C6DE96AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
