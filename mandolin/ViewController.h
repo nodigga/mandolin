@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+
+
+    CGPoint position;
+    IBOutlet UIImageView *image;
+    NSTimer *timer;
+
+}
+-(IBAction)Start;
+-(IBAction)Stop;
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UISlider *slider;

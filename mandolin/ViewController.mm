@@ -31,6 +31,29 @@
 
 UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
 
+
+-(IBAction)Start {
+    timer = [NSTimer scheduledTimerWithTimeInterval:(0.1)
+                                             target: self
+                                           selector:@selector(onTimer)
+                                           userInfo: nil repeats: YES];
+}
+
+-(IBAction)Stop {
+    if (timer != nil)
+    {
+        [timer invalidate];
+        timer = nil;
+    }
+}
+
+-(void)onTimer {
+    NSLog(@ "works!");
+}
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
