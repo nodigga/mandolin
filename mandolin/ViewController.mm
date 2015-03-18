@@ -42,7 +42,18 @@ bool state2 = false;
 bool state3 = false;
 bool state4 = false;
 
+bool isOn1 = false;
+bool isOn2 = false;
+bool isOn3 = false;
+bool isOn4 = false;
+
 int current_state = 0;
+
+
+
+
+
+
 
 -(IBAction)Start {
     timer = [NSTimer scheduledTimerWithTimeInterval:(bpm)
@@ -69,7 +80,6 @@ int current_state = 0;
     state4 = false;
     
     [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-
     [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
     [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
     [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
@@ -88,7 +98,11 @@ int current_state = 0;
     [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
     [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
     
-    self->myMandolin->pluck(1);
+        if(isOn1==true){
+        
+        self->myMandolin->pluck(1);
+        
+        }
         
     }
     
@@ -98,6 +112,13 @@ int current_state = 0;
         [self.myButton2 setBackgroundImage:btnImage forState:UIControlStateNormal];
         [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
         [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        
+        
+        if(isOn2==true){
+            
+            self->myMandolin->pluck(1);
+            
+        }
         
        
     }
@@ -111,6 +132,13 @@ int current_state = 0;
         [self.myButton3 setBackgroundImage:btnImage forState:UIControlStateNormal];
         [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
        
+        if(isOn3==true){
+            
+            self->myMandolin->pluck(1);
+            
+        }
+        
+        
     }
     
     
@@ -120,6 +148,13 @@ int current_state = 0;
         [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
         [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
         [self.myButton4 setBackgroundImage:btnImage forState:UIControlStateNormal];
+        
+        if(isOn4==true){
+            
+            self->myMandolin->pluck(1);
+            
+        }
+        
         
     }
     
@@ -166,6 +201,7 @@ int current_state = 0;
         
     
         
+        
     }];
     
     [[appDelegate audioController] addChannels:@[myMandolinChannel]];
@@ -202,13 +238,76 @@ int current_state = 0;
 
 
 -(IBAction)pluckMyMandolin {
-    self->myMandolin->pluck(1);
+    //self->myMandolin->pluck(1);
     
+    
+    if(isOn1 ==false)
+    {isOn1 = true;
+    }
+    
+    else {
+        isOn1 = false;
+    
+    }
    
-
-    [self.myButton1 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
+    //NSLog(@"value is %d", isOn1);
+    
+    //[self.myButton1 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
 }
 
+-(IBAction)padTwoTouch {
+    //self->myMandolin->pluck(1);
+    
+    
+    if(isOn2 ==false)
+    {isOn2 = true;
+    }
+    
+    else {
+        isOn2 = false;
+        
+    }
+    
+    NSLog(@"value is %d", isOn2);
+    
+    //[self.myButton1 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
+}
+
+
+-(IBAction)padThreeTouch {
+    //self->myMandolin->pluck(1);
+    
+    
+    if(isOn3 ==false)
+    {isOn3 = true;
+    }
+    
+    else {
+        isOn3 = false;
+        
+    }
+    
+    //[self.myButton1 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
+}
+
+
+-(IBAction)padFourTouch {
+    //self->myMandolin->pluck(1);
+    
+    
+    if(isOn4 == false)
+    {isOn4 = true;
+    }
+    
+    else {
+        isOn4 = false;
+        
+    }
+    
+    
+    
+    //[self.myButton1 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
+}
 
 
 -(IBAction)changeFrequency:(UISlider *)sender {
@@ -231,7 +330,7 @@ int noteOn = 440;
 
 
 -(IBAction)noteOnMyMoog {
-    self->myMoog->noteOn(noteOn,0.8);
+    //self->myMoog->noteOn(noteOn,0.8);
     
     [self.myButton2 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
     

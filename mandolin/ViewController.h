@@ -15,6 +15,12 @@
     IBOutlet UIImageView *image;
     NSTimer *timer;
     NSTimeInterval bpm;
+    
+    //bool isOn1;
+    //bool isOn2;
+    //bool isOn3;
+    //bool isOn4;
+
 
 }
 -(IBAction)Start;
