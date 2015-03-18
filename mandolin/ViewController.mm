@@ -34,12 +34,25 @@
 
 UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
 
+UIImage *btnImage2 = [UIImage imageNamed:@"Pad_1.png"];
+
+
+bool state1 = false;
+bool state2 = false;
+bool state3 = false;
+bool state4 = false;
+
+int current_state = 0;
 
 -(IBAction)Start {
     timer = [NSTimer scheduledTimerWithTimeInterval:(bpm)
                                              target: self
                                            selector:@selector(onTimer)
                                            userInfo: nil repeats: YES];
+    
+    
+    current_state = 0;
+    
 }
 
 -(IBAction)Stop {
@@ -48,11 +61,76 @@ UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
         [timer invalidate];
         timer = nil;
     }
+    
+    
+    state1 = false;
+    state2 = false;
+    state3 = false;
+    state4 = false;
+    
+    [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+
+    [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+    [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+    [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+    
 }
 
 -(void)onTimer {
-    NSLog(@ "works!");
+   
+    
+    
+    
+    if (current_state == 0){
+    
+    [self.myButton1 setBackgroundImage:btnImage forState:UIControlStateNormal];
+    [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+    [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+    [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+    
     self->myMandolin->pluck(1);
+        
+    }
+    
+    else if (current_state == 1){
+        
+        [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        [self.myButton2 setBackgroundImage:btnImage forState:UIControlStateNormal];
+        [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        
+       
+    }
+    
+    
+    
+    else if (current_state == 2){
+        
+        [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        [self.myButton3 setBackgroundImage:btnImage forState:UIControlStateNormal];
+        [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+       
+    }
+    
+    
+    else if (current_state == 3){
+        
+        [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+        [self.myButton4 setBackgroundImage:btnImage forState:UIControlStateNormal];
+        
+    }
+    
+    current_state++;
+    
+    if(current_state == 4){
+        
+        current_state = 0;
+        
+    }
+    
     
 }
 
@@ -169,6 +247,8 @@ int noteOn = 440;
     bpm = [sender value];
     [self Stop];
     [self Start];
+    
+    
     
     //NSLog(@"bpm is %f ", bpm);
 
