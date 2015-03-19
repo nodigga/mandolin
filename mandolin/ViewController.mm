@@ -13,11 +13,27 @@
 #import "Mandolin.h"
 #import "Moog.h"
 
+static NSString *btnImage1 = @"Pad_2.png";
+static NSString *btnImage2 = @"Pad_1.png";
 
-@interface ViewController ()
+@interface ViewController (){
 
+bool state1;
+bool state2;
+bool state3;
+bool state4;
+
+bool isOn1;
+bool isOn2;
+bool isOn3;
+bool isOn4;
+
+int current_state;
+    
+}
 
 @end
+
 
 @implementation ViewController{
 
@@ -28,34 +44,15 @@
     stk::Moog *myMoog;
 
     
+    
+
+    
 }
 
 
 
-UIImage *btnImage = [UIImage imageNamed:@"Pad_2.png"];
-
-UIImage *btnImage2 = [UIImage imageNamed:@"Pad_1.png"];
-
-
-bool state1 = false;
-bool state2 = false;
-bool state3 = false;
-bool state4 = false;
-
-bool isOn1 = false;
-bool isOn2 = false;
-bool isOn3 = false;
-bool isOn4 = false;
-
-int current_state = 0;
-
-
-
-
-
-
-
 -(IBAction)Start {
+    [self Stop];
     timer = [NSTimer scheduledTimerWithTimeInterval:(bpm)
                                              target: self
                                            selector:@selector(onTimer)
@@ -66,107 +63,65 @@ int current_state = 0;
     
 }
 
--(IBAction)Stop {
+-(IBAction)Stop
+{
     if (timer != nil)
     {
         [timer invalidate];
         timer = nil;
     }
     
-    
     state1 = false;
     state2 = false;
     state3 = false;
     state4 = false;
     
-    [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-    [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-    [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-    [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
+    [self.myButton1 setSelected:NO];
+    [self.myButton2 setSelected:NO];
+    [self.myButton3 setSelected:NO];
+    [self.myButton4 setSelected:NO];
     
 }
 
 -(void)onTimer {
    
-    
-    
-    
-    if (current_state == 0){
-    
-    [self.myButton1 setBackgroundImage:btnImage forState:UIControlStateNormal];
-    [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-    [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-    [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-    
-        if(isOn1==true){
-        
-        self->myMandolin->pluck(1);
-        
-        }
-        
-    }
-    
-    else if (current_state == 1){
-        
-        [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        [self.myButton2 setBackgroundImage:btnImage forState:UIControlStateNormal];
-        [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        
-        
-        if(isOn2==true){
-            
+    [self.myButton1 setSelected:NO];
+    [self.myButton2 setSelected:NO];
+    [self.myButton3 setSelected:NO];
+    [self.myButton4 setSelected:NO];
+
+    switch (current_state)
+    {
+        case 0:
+        {
+            [self.myButton1 setSelected:YES];
             self->myMandolin->pluck(1);
-            
+            break;
         }
-        
-       
-    }
-    
-    
-    
-    else if (current_state == 2){
-        
-        [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        [self.myButton3 setBackgroundImage:btnImage forState:UIControlStateNormal];
-        [self.myButton4 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-       
-        if(isOn3==true){
-            
+        case 1:
+        {
+            [self.myButton2 setSelected:YES];
             self->myMandolin->pluck(1);
-            
+            break;
         }
-        
-        
-    }
-    
-    
-    else if (current_state == 3){
-        
-        [self.myButton1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        [self.myButton2 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        [self.myButton3 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
-        [self.myButton4 setBackgroundImage:btnImage forState:UIControlStateNormal];
-        
-        if(isOn4==true){
-            
+        case 2:
+        {
+            [self.myButton3 setSelected:YES];
             self->myMandolin->pluck(1);
-            
+            break;
         }
-        
-        
+        case 3:
+        {
+            [self.myButton4 setSelected:YES];
+            self->myMandolin->pluck(1);
+            break;
+        }
     }
     
     current_state++;
-    
     if(current_state == 4){
-        
         current_state = 0;
-        
     }
-    
-    
 }
 
 
@@ -224,7 +179,14 @@ int current_state = 0;
 
     bpm = 0.5;
     
-
+    [self.myButton1 setBackgroundImage:[UIImage imageNamed:btnImage2] forState:UIControlStateNormal];
+    [self.myButton2 setBackgroundImage:[UIImage imageNamed:btnImage2] forState:UIControlStateNormal];
+    [self.myButton3 setBackgroundImage:[UIImage imageNamed:btnImage2] forState:UIControlStateNormal];
+    [self.myButton4 setBackgroundImage:[UIImage imageNamed:btnImage2] forState:UIControlStateNormal];
+    [self.myButton1 setBackgroundImage:[UIImage imageNamed:btnImage1] forState:UIControlStateSelected];
+    [self.myButton2 setBackgroundImage:[UIImage imageNamed:btnImage1] forState:UIControlStateSelected];
+    [self.myButton3 setBackgroundImage:[UIImage imageNamed:btnImage1] forState:UIControlStateSelected];
+    [self.myButton4 setBackgroundImage:[UIImage imageNamed:btnImage1] forState:UIControlStateSelected];
 }
 
 - (void)didReceiveMemoryWarning
@@ -332,7 +294,7 @@ int noteOn = 440;
 -(IBAction)noteOnMyMoog {
     //self->myMoog->noteOn(noteOn,0.8);
     
-    [self.myButton2 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
+   // [self.myButton2 setBackgroundImage:btnImage forState:UIControlStateHighlighted];
     
     
 }
