@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EF984581AC4B4E0008A8DB5 /* kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5EF984571AC4B4E0008A8DB5 /* kick.wav */; };
 		A82AB750FD814DC8C3764817 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F93C38F00EF2A806D31F68 /* libPods.a */; };
 		A854F1B51AA6D0D7006CAFC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A854F1B41AA6D0D7006CAFC8 /* Foundation.framework */; };
 		A854F1B71AA6D0D7006CAFC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A854F1B61AA6D0D7006CAFC8 /* CoreGraphics.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EF984571AC4B4E0008A8DB5 /* kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = kick.wav; path = ../../Desktop/kick.wav; sourceTree = "<group>"; };
 		77F93C38F00EF2A806D31F68 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C9FA6747E026922CFA6F49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A854F1B11AA6D0D7006CAFC8 /* mandolin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mandolin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 		A854F1A81AA6D0D7006CAFC8 = {
 			isa = PBXGroup;
 			children = (
+				5EF984571AC4B4E0008A8DB5 /* kick.wav */,
 				A854F1E91AA6D0E4006CAFC8 /* Podfile */,
 				A854F1BA1AA6D0D7006CAFC8 /* mandolin */,
 				A854F1D91AA6D0D7006CAFC8 /* mandolinTests */,
@@ -253,6 +256,7 @@
 			files = (
 				A854F1CD1AA6D0D7006CAFC8 /* Images.xcassets in Resources */,
 				A854F1BF1AA6D0D7006CAFC8 /* InfoPlist.strings in Resources */,
+				5EF984581AC4B4E0008A8DB5 /* kick.wav in Resources */,
 				A854F1C81AA6D0D7006CAFC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

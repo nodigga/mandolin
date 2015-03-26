@@ -12,9 +12,12 @@
 #import "AEBlockChannel.h"
 #import "Mandolin.h"
 #import "Moog.h"
+#import "AEAudioFileLoaderOperation.h"
+#import "AEAudioFilePlayer.h"
 
 static NSString *btnImage1 = @"Pad_2.png";
 static NSString *btnImage2 = @"Pad_1.png";
+
 
 @interface ViewController (){
 
@@ -32,24 +35,19 @@ int current_state;
     
 }
 
+@property(nonatomic, retain) AEAudioFilePlayer *kick;
+
 @end
 
 
-@implementation ViewController{
-
+@implementation ViewController
+{
     AEBlockChannel *myMandolinChannel;
     stk::Mandolin *myMandolin;
     
     AEBlockChannel *myMoogChannel;
     stk::Moog *myMoog;
-
-    
-    
-
-    
 }
-
-
 
 -(IBAction)Start {
     [self Stop];
@@ -95,25 +93,22 @@ int current_state;
         case 0:
         {
             [self.myButton1 setSelected:YES];
-            self->myMandolin->pluck(1);
+            //self->myMandolin->pluck(1);
             break;
         }
         case 1:
         {
             [self.myButton2 setSelected:YES];
-            self->myMandolin->pluck(1);
             break;
         }
         case 2:
         {
             [self.myButton3 setSelected:YES];
-            self->myMandolin->pluck(1);
             break;
         }
         case 3:
         {
             [self.myButton4 setSelected:YES];
-            self->myMandolin->pluck(1);
             break;
         }
     }
@@ -140,26 +135,14 @@ int current_state;
     }
     stk::Stk::setRawwavePath([[[NSBundle mainBundle] pathForResource:@"rawwaves" ofType:@"bundle"] UTF8String]);
     
+    NSURL *file = [[NSBundle mainBundle] URLForResource:@"kick" withExtension:@"wav"];
+    self.kick = [AEAudioFilePlayer audioFilePlayerWithURL:file
+                                          audioController:[appDelegate audioController]
+                                                    error:NULL];
     
-    myMandolin = new stk::Mandolin(400);
-    myMandolin->setFrequency(400);
+    [[appDelegate audioController] addChannels:[NSArray arrayWithObject:_kick]];
     
-    myMandolinChannel = [AEBlockChannel channelWithBlock:^(const AudioTimeStamp  *time,
-                                                           UInt32 frames,
-                                                           AudioBufferList *audio) {
-        for ( int i=0; i<frames; i++ ) {
-            
-            ((float*)audio->mBuffers[0].mData)[i] =
-            ((float*)audio->mBuffers[1].mData)[i] = myMandolin->tick();
-            
-        }
-        
     
-        
-        
-    }];
-    
-    [[appDelegate audioController] addChannels:@[myMandolinChannel]];
     
     myMoog = new stk::Moog();
     myMoog->setFrequency(400);
